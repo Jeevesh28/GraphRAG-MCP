@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kgrag-mcp"
+version = "0.1.0"
+description = "MCP server that lets agents build and query their own corpora with hybrid dense + knowledge-graph retrieval"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.2",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+st = ["sentence-transformers>=2.6"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+kgrag-mcp = "kgrag.server:main"
+kgrag-eval = "kgrag.eval.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

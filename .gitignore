@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+
+# kgrag data and eval output
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.log
+eval_results.json
+
+# OS
+.DS_Store
